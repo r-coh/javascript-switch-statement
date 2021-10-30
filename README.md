@@ -45,4 +45,16 @@ In a scenario where non of the clause match, the `default` clause if available i
 
 ![flow_diagram](flow_diagram.png "Flow Diagram")
 
-As shown above, the program start by executing the given expression, then checking the results match/equal to the given case constant, in which case it would go ahead to execute the statements for the matching case. When `break` statements are provided, the program exits the switch statement immediately, otherwise continues evaluating other cases.  
+As shown above, the program start by executing the given expression, then checking the results match/equal to the given case constant, in which case it would go ahead to execute the statements for the matching case. When `break` statements are provided, the program exits the switch statement immediately, otherwise continues evaluating other cases.
+
+## How Switch Statement Works in Javascript
+
+## Examples of Switch Statements
+
+## Executing Multiple Cases if Condition Satisfies
+
+## Switch Statement vs If Else Statement
+
+## When to use Switch Statement
+
+## Wrap up
