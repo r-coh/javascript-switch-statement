@@ -28,3 +28,30 @@ switch (Animal) {
   default:
     console.log('This animal is extinct.');
 }
+
+let day = new Date('January 1, 1970 00:00:00')
+switch (day.getDay()) {
+    case 0: 
+    console.log("Sunny Day");
+    break;
+    case 1:
+        console.log("Money Day");
+        break;
+    case 2:
+        console.log("Two Days");
+        break;
+    case 3:
+        console.log("Wedding Day");
+        break;
+    case 4: 
+        console.log("Thus Day");
+        break;
+    case 5: 
+        console.log("Free Day");
+        break;
+    case 6:
+        console.log("Sabbath Day");
+        break;
+    default:
+        console.log("Not a day of the week.");
+}
