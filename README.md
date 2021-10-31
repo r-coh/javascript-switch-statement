@@ -13,6 +13,7 @@ To actually see this practice, a switch statement would be usefull when, given a
 Another examples that would actually necessistate the usage of switch statement, is when given the response from a HTTP request, a switch statement can be used to perform different actions based on the response status code.  
 
 ## Syntax of a Switch Statement
+
 ```javascript
 switch (expression) {
     case result_1: // value_1 is a constant
@@ -78,8 +79,8 @@ Example to print name of the Day fetched from the day of week of the the current
 const epoch_day = new Date('January 1, 1970 00:00:00')
 switch (epoch_day.getDay()) {
     case 0: 
-    console.log("Sunny Day");
-    break;
+        console.log("Sunny Day");
+        break;
     case 1:
         console.log("Money Day");
         break;
@@ -109,8 +110,57 @@ The returned value is compared with the given result, return a modified name of 
 
 ## Executing Multiple Cases if Condition Satisfies
 
+Considering that `break` statements are optional, multiple cases can be evaluated within the same switch block. When no `break` statement is provided, the program will continue to execute other case's statement block until a `break` statement is encountered.
+
+Example, lets use a switch statement to find when epoch time was either a weekday or weekend.
+
+```javascript
+let epoch_date = new Date('January 1, 1970 00:00:00')
+switch (epoch_date.getDay()) {
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+        console.log("Epoch was on a weekday");
+        break;
+    case 6:
+    case 0:
+        console.log("Epoch was on a weekend");
+        break;
+    default:
+        console.log("Invalid day of the week")s
+}
+```
+
+In the above example, `break` statement having been omitted for the case blocks of the first 5 case clauses, ensures that once any of the case constant matches a given value, its code block will be executed, but since there are no defined statements, it goes on to execute other case clauses until encountering a `break` system, that exits the program from execution.
+
 ## Switch Statement vs If Else Statement
 
+`if else` statements is a conditional control structure that is used to compare against a pair of outcomes. This can only be either `true` or `false` responses, and any other custom matching required should always return a boolean. If else statements are used to evaluate at most 2 conditions.
+
+Switch statements have better support for handling multilple result expressions unlike if else statement that mostly works on binary results of an expression, ie. there can only be 2 outcomes. Multiple conditions can be achieved with if else statements, by nesting multiple of if else statements together.
+
+Even though it's possible to achieve similar control flow with `if else` statements, `switch case` offers more readablity of the code, as nested if conditions are not always quick to read through and understand flow of a program.  
+
+An Example of an nested if else statement usage.
+
+```javascript
+let epoch_date = new Date('January 1, 1970 00:00:00')
+var day = epoch_date.getDay()
+if (day === 0) { 
+    console.log("[IF] Epoch was on a weekend")
+} else if (day <= 5){
+    console.log("[IF ELSE] Epoch was on a weekeday")
+} else  if (day === 6){
+    console.log("[IF ELSE] Epoch was on a weekend")
+} else {
+    console.log("[ELSE] Invalid day of the week")
+}
+```
+
 ## When to use Switch Statement
+
+Switch statements, as we have explored in the examples, is better suited for multiple cases of an expected result. While an if else statement would be better for cases with only 2 conditions.
 
 ## Wrap up

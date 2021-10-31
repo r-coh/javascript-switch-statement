@@ -12,6 +12,10 @@ switch (foo) {
   case 2:
     console.log(2);
     // break;
+    case 3: 
+    console.log(3);
+    case 4:
+      console.log(4)
   default:
     console.log('default');
 }
@@ -29,11 +33,12 @@ switch (Animal) {
     console.log('This animal is extinct.');
 }
 
+// SINGLE CASE EXAMPLE
 let day = new Date('January 1, 1970 00:00:00')
 switch (day.getDay()) {
     case 0: 
-    console.log("Sunny Day");
-    break;
+        console.log("Sunny Day");
+        break;
     case 1:
         console.log("Money Day");
         break;
@@ -54,4 +59,23 @@ switch (day.getDay()) {
         break;
     default:
         console.log("Not a day of the week.");
+}
+
+
+// MUTLI-CASE EXAMPLE
+let epoch_date = new Date('January 1, 1970 00:00:00')
+switch (epoch_date.getDay()) {
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+        console.log("Epoch was on a weekday");
+        break;
+    case 6:
+    case 0:
+        console.log("Epoch was on a weekend");
+        break;
+    default:
+        console.log("Invalid day of the week");
 }
