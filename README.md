@@ -65,7 +65,7 @@ In a scenario where non of the clause match, the `default` clause if available i
 
 ![flow_diagram](flow_diagram.png "Flow Diagram")
 
-As shown above, the program start by executing the given expression, then comparing the returned value with the given case constants. When the case constant match the returned value, the program goes ahead to execute the statements for the matching case. When `break` statements are provided, the program exits the switch statement immediately, otherwise it would go on evaluating statements in other cases even when case constants do not match, until a `break` statement is encountered.
+As shown above, the program start by executing the given expression, then comparing the returned value with the given case constants. When the case constant match the returned value, the program goes ahead to execute the statements for the matching case. When `break` statements are provided, the program exits the switch statement immediately, otherwise it would go on evaluating statements in other cases even when case constants do not match, until it exits or another `break` statement is encountered.
 
 ## How Switch Statement Works in Javascript
 
@@ -99,17 +99,19 @@ An example of an expression in JavaScript,
 
 ### Cases
 
-Cases define how values from the expression compares to each given case.  In Javascript, the comparision of results is strict `===`, meaning values must be of the same type.
+Cases define blocks of instructions for the program to execute once a given result for an expression matches the case constant. The are used to control program flow within a switch statement, separating pieces of work a program should perform once a case is matched.
 
-To retain changes made while executing a switch statement, variables are set outside of the switch block, and their values can be altered within the matching cases.
+In Javascript, the comparision of results is strict `===`, meaning values being compared must be of the same type as well as the same value.
 
-Variables can also be scoped within the case blocks of a given clause by using `let` and `const`.
+To retain changes made while executing a switch statement, variables are set outside of the switch block, and their values can be altered when executing a switch statement.
 
-One outsanding feature of cases, is the different outcomes based on the provision of `break` statement at the end of the case blocks. When provided, once its encoutered, the excution within the switch block ends, otherwise, other clauses are evaluated.
+Variables can also be scoped within the case blocks of a given clause by using `let` and `const`, to ensure they are only available within the execution instructions of that case only.
+
+One outsanding feature of cases, is the different outcomes based on the provision of `break` statement at the end of the case blocks. When provided, the excution within the switch block ends, otherwise, other case clause's statements are evaluated.
 
 ### Default Case
 
-The default case is optional and can be defined in whichever position within the switch block, its evaluated when all the other cases do no match the value of given expression. A `break` statement is not necessary in this case as the excution of the switch statement ends here anyway.
+The default case is optional and can be defined in whichever position within the switch block, its evaluated when all the other cases do no match the value of given expression. A `break` statement is not necessary in this case as the execution of the switch statement ends here anyway.
 
 ## Examples of Switch Statements
 
@@ -177,13 +179,11 @@ In the above example, `break` statement having been omitted for the case blocks 
 
 ## Switch Statement vs If Else Statement
 
-`if else` statements is a conditional control structure that is used to compare against a pair of outcomes. This can only be either `true` or `false` responses, and any other custom matching required should always return a boolean. If else statements are used to evaluate at most 2 conditions.
-
-Switch statements have better support for handling multilple result expressions unlike if else statement that mostly works on binary results of an expression, ie. there can only be 2 outcomes. Multiple conditions can be achieved with if else statements, by nesting multiple of if else statements together.
+`if else` statements is a conditional control structure that is used to compare against a pair of outcomes. This can only be either `true` or `false` responses only, though they are used to compare boolean values, if else statements can be used instead of switch statements especially when the expected results from an expression are either `true` or `fasle`, since this are the constants required to evaluate the different cases in an if statement execution. Switch statements have better support for handling multilple result not restricted to only `true` or `fasle`.
 
 Even though it's possible to achieve similar control flow with `if else` statements, `switch case` offers more readablity of the code, as nested if conditions are not always quick to read through and understand flow of a program.  
 
-An Example of an nested if else statement usage.
+An Example above written with if statements.
 
 ```javascript
 let epoch_date = new Date('January 1, 1970 00:00:00')
@@ -204,3 +204,10 @@ if (day === 0) {
 Switch statements, as we have explored in the examples, is better suited for multiple cases of an expected result. While an if else statement would be better for cases with only 2 conditions.
 
 ## Wrap up
+
+<p class="codepen" data-height="265" data-theme-id="light" data-default-tab="js,result" data-user="Mamboleoo" data-slug-hash="XWJPxpZ" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Walkers - How to">
+  <span>See the Pen <a href="https://codepen.io/Mamboleoo/pen/XWJPxpZ">
+  Walkers - How to</a> by Louis Hoebregts (<a href="https://codepen.io/Mamboleoo">@Mamboleoo</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
