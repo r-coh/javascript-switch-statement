@@ -118,28 +118,28 @@ The default case is optional and can be defined in whichever position within the
 Example to print name of the Day fetched from the day of week of the the current date time. This can be used to modify the result of the expected day name say _'Monday'_ to something funky as _'Money Day'_.
 
 ```javascript
-const epoch_day = new Date('January 1, 1970 00:00:00')
-switch (epoch_day.getDay()) {
+const today = new Date(Date.now())
+switch (today.getDay()) {
     case 0: 
-        console.log("Sunny Day");
+        console.log("Today is Sunday");
         break;
     case 1:
-        console.log("Money Day");
+        console.log("Today is Monday");
         break;
     case 2:
-        console.log("Two Days");
+        console.log("Today is Tuesday");
         break;
     case 3:
-        console.log("Wedding Day");
+        console.log("Today is WednesDay");
         break;
     case 4: 
-        console.log("Thus Day");
+        console.log("Today is Thursday");
         break;
     case 5: 
-        console.log("Free Day");
+        console.log("Today is Friday");
         break;
     case 6:
-        console.log("Sabbath Day");
+        console.log("Today is Saturday");
         break;
     default:
         console.log("Not a day of the week.");
@@ -157,21 +157,21 @@ Considering that `break` statements are optional, multiple cases can be evaluate
 Example, lets use a switch statement to find when epoch time was either a weekday or weekend.
 
 ```javascript
-let epoch_date = new Date('January 1, 1970 00:00:00')
-switch (epoch_date.getDay()) {
+const today = new Date(Date.now())
+switch (today.getDay()) {
     case 1:
     case 2:
     case 3:
     case 4:
     case 5:
-        console.log("Epoch was on a weekday");
+        console.log("Today is a weekday");
         break;
     case 6:
     case 0:
-        console.log("Epoch was on a weekend");
+        console.log("Today is a weekend");
         break;
     default:
-        console.log("Invalid day of the week")s
+        console.log("Invalid day of the week")
 }
 ```
 
@@ -186,8 +186,8 @@ Even though it's possible to achieve similar control flow with `if else` stateme
 An Example above written with if statements.
 
 ```javascript
-let epoch_date = new Date('January 1, 1970 00:00:00')
-var day = epoch_date.getDay()
+let today = new Date(Date.now())
+var day = today.getDay()
 if (day === 0) { 
     console.log("[IF] Epoch was on a weekend")
 } else if (day <= 5){
